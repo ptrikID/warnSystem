@@ -1,0 +1,8 @@
+name: Warn
+main: main.Warn
+version: 1.7
+commands:
+  warn:
+  warns:
+  delwarn:
+  unban:
