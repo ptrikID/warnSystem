@@ -1,0 +1,7 @@
+name: Report
+main: main.Report
+version: 0.1
+commands:
+  report:
+  login:
+  logout:

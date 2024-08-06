@@ -1,0 +1,5 @@
+name: Permission
+main: main.Permission
+version: 0.1
+commands:
+  perms:
