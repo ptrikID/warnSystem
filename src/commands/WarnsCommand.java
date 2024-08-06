@@ -47,13 +47,10 @@ public class WarnsCommand implements CommandExecutor {
                         int targetWarns = getWarns(targetName);
                         player.sendMessage(Warn.prefix + "Warnings: §a" + targetWarns);
 
-                        // Check if player is banned
                         if (target.isBanned()) {
-                            // Get BanID and BanDate from config
                             String banID = plugin.getConfig().getString("Player." + targetName + ".BanID");
                             String banDate = plugin.getConfig().getString("Player." + targetName + ".BanDate");
 
-                            // Display BanID and BanDate
                             player.sendMessage(Warn.prefix + "Banned: §aTrue");
                             player.sendMessage(Warn.prefix + "BanID: §a" + banID);
                             player.sendMessage(Warn.prefix + "Ban Date: §a" + banDate);
