@@ -1,7 +1,7 @@
 name: Warn
 main: main.Warn
 author: ptrikID
-version: 1.7
+version: 1.0
 commands:
   warn:
   warns:
