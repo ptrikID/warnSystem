@@ -23,7 +23,7 @@ public class UnBan implements CommandExecutor {
 
     public void resetWarns(String playerName){
         plugin.getConfig().set("Player." + playerName + ".Warns", 0);
-        plugin.getConfig().set("Player." + playerName + ".BanID", null); // Remove BanID from config
+        plugin.getConfig().set("Player." + playerName + ".BanID", null);
         plugin.getConfig().set("Player." + playerName + ".BanDate", null);
         plugin.saveConfig();
     }
