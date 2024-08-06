@@ -65,27 +65,21 @@ public class WarnCommand implements CommandExecutor, Listener {
                         }
 
                         if (warns >= 3) {
-                            // Generate 5-digit random number for BanID
                             String banID = generateBanID();
 
-                            // Get current date and time for ban
                             SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
                             String currentDate = dateFormat.format(new Date());
 
-                            // Add BanID and ban date to player's config
                             plugin.getConfig().set("Player." + targetName + ".BanID", banID);
                             plugin.getConfig().set("Player." + targetName + ".BanDate", currentDate);
                             plugin.saveConfig();
 
-                            // Ban the player
                             Bukkit.getBanList(BanList.Type.NAME).addBan(targetName, "You have been banned for accumulating 3 warnings. BanID: " + banID, null, player.getName());
 
-                            // Kick the player if online
                             if (target.isOnline()) {
                                 ((Player) target).kickPlayer("You have been banned for accumulating 3 warnings. BanID: " + banID);
                             }
 
-                            // Broadcast ban message
                             for (Player all : Bukkit.getOnlinePlayers()) {
                                 if (all.hasPermission("warns.broadcast")) {
                                     all.sendMessage(Warn.prefix + "§7---------------------");
@@ -108,7 +102,7 @@ public class WarnCommand implements CommandExecutor, Listener {
 
     private String generateBanID() {
         Random random = new Random();
-        int banID = random.nextInt(90000) + 10000; // Generate a random number between 10000 and 99999
+        int banID = random.nextInt(90000) + 10000;
         return "#" + banID;
     }
 }
