@@ -1,5 +1,6 @@
 name: Warn
 main: main.Warn
+author: ptrikID
 version: 1.7
 commands:
   warn:
